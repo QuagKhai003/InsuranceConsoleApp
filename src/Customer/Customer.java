@@ -1,18 +1,20 @@
 package Customer;
 
 import Claim.*;
-import InsuranceSystem.InsuranceCard;
+import Interface.ClaimProcessManager;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author <Ngo Quang Khai - s3975831>
  */
-public abstract class Customer {
+public abstract class Customer implements ClaimProcessManager {
     private String id;
     private String fullName;
     private String insuranceCard;
-    private ArrayList<Claim> listClaims;
+    private List<Claim> listClaims;
 
     public Customer() {
         this.id = "Default";
@@ -22,9 +24,10 @@ public abstract class Customer {
     }
 
     public Customer(String id, String fullName, String insuranceCard) {
-        this.id = "c-" + id;
+        this.id = id;
         this.fullName = fullName;
         this.insuranceCard = insuranceCard;
+        this.listClaims = new ArrayList<>();
     }
 
     public String getId() {
@@ -51,23 +54,52 @@ public abstract class Customer {
         this.insuranceCard = insuranceCard;
     }
 
-    public ArrayList<Claim> getListClaims() {
+    public List<Claim> getListClaims() {
         return listClaims;
     }
 
-    public void setListClaims(ArrayList<Claim> listClaims) {
+    public void setListClaims(List<Claim> listClaims) {
         this.listClaims = listClaims;
     }
 
+    public String listIdClaim() {
+        return listClaims.stream().map(Claim::getId).collect(Collectors.joining(","));
+    }
+
     public abstract boolean isPolicyHolder();
+
+    @Override
+    public void add(Claim c) {
+        listClaims.add(c);
+    }
+
+    @Override
+    public void update(Claim c) {
+
+    }
+
+    @Override
+    public void delete(Claim c) {
+
+    }
+
+    @Override
+    public Claim getOne(String id) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Claim> getAll() {
+        return null;
+    }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "id='" + id + '\'' +
                 ", fullName='" + fullName + '\'' +
-                ", insuranceCard=" + insuranceCard + '\'' +
-                ", listClaims=" + listClaims +
+                ", insuranceCard='" + insuranceCard + '\'' +
+                ", listClaims=" + "[" + listIdClaim() + "]" +
                 '}';
     }
 }

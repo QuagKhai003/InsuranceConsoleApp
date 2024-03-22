@@ -3,9 +3,11 @@ package Customer;
 import InsuranceSystem.InsuranceCard;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PolicyHolder extends Customer {
-    private ArrayList<Dependent> listDependents;
+    private List<Customer> listDependents;
 
     public PolicyHolder() {
         super();
@@ -15,12 +17,24 @@ public class PolicyHolder extends Customer {
         super(id, fullName, insuranceCardId);
     }
 
-    public ArrayList<Dependent> getListDependents() {
+    public List<Customer> getListDependents() {
         return listDependents;
     }
 
-    public void setListDependents(ArrayList<Dependent> listDependents) {
+    public void setListDependents(List<Customer> listDependents) {
         this.listDependents = listDependents;
+    }
+
+    public boolean addDependent(Customer c) {
+        if (listDependents.contains(c)) {
+            return false;
+        }
+        listDependents.add(c);
+        return true;
+    }
+
+    public String listNameDep() {
+        return this.listDependents.stream().map(Customer::getFullName).collect(Collectors.joining(","));
     }
 
     @Override
@@ -30,13 +44,12 @@ public class PolicyHolder extends Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "PolicyHolder{" +
                 "id='" + super.getId() + '\'' +
                 ", fullName='" + super.getFullName() + '\'' +
-                ", insuranceCard=" + super.getInsuranceCard() + '\'' +
-                ", listClaims=" + super.getListClaims() + '\'' +
-                ", listDependents=" + this.listDependents +
+                ", insuranceCard='" + super.getInsuranceCard() + '\'' +
+                ", listClaims=" + "[" + super.listIdClaim() + "]" +
+                ", listDependents=" + "[" + listNameDep() + "]" +
                 '}';
     }
-
 }

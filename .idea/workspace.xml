@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Customer/Dependent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/Claims.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/Dependents.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataSource/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menu/Main.java" afterDir="false" />
+    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Bulding the simple base code for the Insurance System">
+      <change afterPath="$PROJECT_DIR$/src/Claim/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataSource/Documents.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Dependent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Dependent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/Claims.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Claims.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/Dependents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Dependents.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +42,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Code\Java\InsuranceConsoleApp\src\DataSource" />
@@ -94,6 +92,15 @@
       <option name="presentableId" value="Default" />
       <updated>1710726936683</updated>
     </task>
+    <task id="LOCAL-00001" summary="Bulding the simple base code for the Insurance System">
+      <option name="closed" value="true" />
+      <created>1710885243129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710885243129</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bulding the simple base code for the Insurance System" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bulding the simple base code for the Insurance System" />
   </component>
 </project>

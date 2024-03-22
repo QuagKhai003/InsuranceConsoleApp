@@ -1,6 +1,6 @@
 package InsuranceSystem;
 
-import Customer.Customer;
+import Customer.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,17 +9,17 @@ import java.util.Date;
 public class InsuranceCard {
     private String cardId;
     private Customer cardHolder;
-    private Customer policyOwner;
+    private String policyOwner;
     private Date expireDate;
 
     public InsuranceCard() {
         this.cardId = "Default";
         this.cardHolder = null;
-        this.policyOwner = null;
+        this.policyOwner = "Default";
         this.expireDate = new Date();
     }
 
-    public InsuranceCard(String cardId, Customer cardHolder, Customer policyOwner, String expireDate) throws ParseException {
+    public InsuranceCard(String cardId, Customer cardHolder, String policyOwner, String expireDate) throws ParseException {
         this.cardId = cardId;
         this.cardHolder = cardHolder;
         this.policyOwner = policyOwner;
@@ -32,6 +32,14 @@ public class InsuranceCard {
 
     public void setCardId(String cardId) {
         this.cardId = cardId;
+    }
+
+    public Customer getCardHolder() {
+        return cardHolder;
+    }
+
+    public void setCardHolder(Customer cardHolder) {
+        this.cardHolder = cardHolder;
     }
 
     @Override
@@ -61,7 +69,7 @@ public class InsuranceCard {
             return "InsuranceCard{" +
                     "cardId='" + cardId + '\'' +
                     ", cardHolder=" + cardHolder.getFullName() +
-                    ", policyOwner=" + policyOwner.getFullName()+
+                    ", policyOwner=" + policyOwner+
                     ", expireDate=" + expireDate +
                     '}';
     }

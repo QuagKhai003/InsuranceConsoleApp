@@ -16,4 +16,12 @@ public class Dependent extends Customer {
         return false;
     }
 
+    public String toString() {
+        return "Dependent{" +
+                "id='" + super.getId() + '\'' +
+                ", fullName='" + super.getFullName() + '\'' +
+                ", insuranceCard=" + super.getInsuranceCard() + '\'' +
+                ", listClaims=" + "[" + super.listIdClaim() + "]" +
+                '}';
+    }
 }

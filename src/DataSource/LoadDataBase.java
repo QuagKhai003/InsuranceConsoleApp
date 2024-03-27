@@ -19,8 +19,8 @@ public class LoadDataBase {
     public static List<Customer> dependentList = new ArrayList<>();
     public static List<Customer> policyHolderList = new ArrayList<>();
     public static List<Document> documentList = new ArrayList<>();
-    public static ArrayList<InsuranceCard> cardList = new ArrayList<>();
-    public static ArrayList<Claim> claimList = new ArrayList<>();
+    public static List<InsuranceCard> cardList = new ArrayList<>();
+    public static List<Claim> claimList = new ArrayList<>();
 
     public static void createCustomers() throws FileNotFoundException {
         BufferedReader reader1 = new BufferedReader(new FileReader("src/DataSource/PolicyHolders.txt"));
@@ -91,21 +91,39 @@ public class LoadDataBase {
 
     // Create a list of dependent base on the same InsuranceCard and then set PolicyHolders' listDependents by those list
     public static List<Customer> makeDependentList(String insuranceCardId) {
-        return dependentList.stream().filter(customer -> customer.getInsuranceCard().equals(insuranceCardId)).toList();
+        return dependentList.stream().filter(customer -> customer.getInsuranceCard().equals(insuranceCardId)).collect(Collectors.toList());
+//        return dependentList.stream().filter(customer -> customer.getInsuranceCard().equals(insuranceCardId)).collect(Collectors.toCollection(ArrayList<Customer>::new));
     }
 
     public static List<Document> makeDocumentsList(String claimId) {
-        return documentList.stream().filter(document -> document.getClaimId().equals(claimId)).toList();
+        return documentList.stream().filter(document -> document.getClaimId().equals(claimId)).collect(Collectors.toList());
+//        return documentList.stream().filter(document -> document.getClaimId().equals(claimId)).collect(Collectors.toCollection(ArrayList<Document>::new));
     }
 
     public static List<Claim> makeClaimsList(String cID) {
-        return claimList.stream().filter(aClaim -> aClaim.getInsuredPerson().getId().equals(cID)).toList();
+        return claimList.stream().filter(aClaim -> aClaim.getInsuredPerson().getId().equals(cID)).collect(Collectors.toList());
+//        return claimList.stream().filter(aClaim -> aClaim.getInsuredPerson().getId().equals(cID)).collect(Collectors.toCollection(ArrayList<Claim>::new));
     }
 
 
     // Find a first insuranceCard has the same cardId with cardID
     public static InsuranceCard findCard(String cardID) {
         return LoadDataBase.cardList.stream().filter(card -> card.getCardId().equals(cardID)).findFirst().orElse(null);
+    }
+
+    public static void createAll() throws FileNotFoundException, ParseException {
+        try {
+            createCustomers();
+            createCards();
+            createDocuments();
+            createClaims();
+        } catch (FileNotFoundException e) {
+            System.out.println("File error");
+            throw e;
+        } catch (ParseException e) {
+            System.out.println("Error while parsing value");
+            throw e;
+        }
     }
 
 }

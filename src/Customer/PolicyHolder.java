@@ -15,6 +15,7 @@ public class PolicyHolder extends Customer {
 
     public PolicyHolder(String id, String fullName, String insuranceCardId) {
         super(id, fullName, insuranceCardId);
+        this.listDependents = new ArrayList<>();
     }
 
     public List<Customer> getListDependents() {

@@ -27,6 +27,18 @@ public class Claim {
 
     private Status status;
 
+    public Claim() {
+        this.id = "Default";
+        this.claimDate = null;
+        this.insuredPerson = null;
+        this.cardNumber = "Default";
+        this.examDate = null;
+        this.documents = null;
+        this.claimAmounts = "Default";
+        this.infoBank = "Default";
+        this.status = Status.New;
+    }
+
     public Claim(String id, String claimDate, Customer insuredPerson, String cardNumber, String examDate, List<Document> documents, String claimAmounts, String statusString, String infoBank) throws ParseException {
         this.id = id;
         this.claimDate = new SimpleDateFormat("dd/MM/yyyy").parse(claimDate);
@@ -40,7 +52,7 @@ public class Claim {
     }
 
     public Claim(String id, String claimDate, Customer insuredPerson, String cardNumber, String examDate, String claimAmounts, String infoBank) throws ParseException {
-        this.id = "f-" + id;
+        this.id = id;
         this.claimDate = new SimpleDateFormat("dd/MM/yyyy").parse(claimDate);
         this.insuredPerson = insuredPerson;
         this.cardNumber = cardNumber;
@@ -65,6 +77,81 @@ public class Claim {
 
     public void setInsuredPerson(Customer insuredPerson) {
         this.insuredPerson = insuredPerson;
+    }
+
+    public Date getClaimDate() {
+        return claimDate;
+    }
+
+    public void setClaimDate(Date claimDate) {
+        this.claimDate = claimDate;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public Date getExamDate() {
+        return examDate;
+    }
+
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
+    }
+
+    public List<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
+    }
+
+    public String getClaimAmounts() {
+        return claimAmounts;
+    }
+
+    public void setClaimAmounts(String claimAmounts) {
+        this.claimAmounts = claimAmounts;
+    }
+
+    public String getInfoBank() {
+        return infoBank;
+    }
+
+    public void setInfoBank(String infoBank) {
+        this.infoBank = infoBank;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.valueOf(this.getId().substring(2));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj  instanceof Claim)) {
+            return false;
+        }
+
+        Claim otherClaim = (Claim) obj;
+
+        return this.getId().equals(otherClaim.getId());
     }
 
     @Override

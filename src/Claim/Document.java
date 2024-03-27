@@ -5,7 +5,7 @@ public class Document {
     private String cardNumber;
     private String documentName;
 
-    public Document( String claimId, String cardNumber, String documentName) {
+    public Document(String claimId, String cardNumber, String documentName) {
         this.claimId = claimId;
         this.cardNumber = cardNumber;
         this.documentName = documentName;
@@ -17,6 +17,14 @@ public class Document {
 
     public void setClaimId(String claimId) {
         this.claimId = claimId;
+    }
+
+    public String getDocumentName() {
+        return documentName;
+    }
+
+    public void setDocumentName(String documentName) {
+        this.documentName = documentName;
     }
 
     @Override

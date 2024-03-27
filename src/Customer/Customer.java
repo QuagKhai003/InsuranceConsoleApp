@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * @author <Ngo Quang Khai - s3975831>
  */
-public abstract class Customer implements ClaimProcessManager {
+public abstract class Customer implements ClaimProcessManager{
     private String id;
     private String fullName;
     private String insuranceCard;
@@ -63,6 +63,9 @@ public abstract class Customer implements ClaimProcessManager {
     }
 
     public String listIdClaim() {
+        if ( listClaims == null) {
+            return "";
+        }
         return listClaims.stream().map(Claim::getId).collect(Collectors.joining(","));
     }
 
@@ -70,27 +73,56 @@ public abstract class Customer implements ClaimProcessManager {
 
     @Override
     public void add(Claim c) {
+        if (listClaims.contains(c)) {
+            System.out.println("");
+        }
         listClaims.add(c);
     }
 
     @Override
-    public void update(Claim c) {
-
+    public void update(Claim claim) {
+        Claim foundClaim = listClaims.stream().filter(aClaim -> aClaim.equals(claim)).findFirst().orElse(null);
+        System.out.println(foundClaim);
+        System.out.println(claim);
+        if (foundClaim != null) {
+            /*foundClaim.setClaimDate(claim.getClaimDate());
+            foundClaim.setExamDate(claim.getExamDate());
+            foundClaim.setStatus(claim.getStatus());
+            foundClaim.setDocuments(claim.getDocuments());
+            foundClaim.setInfoBank(claim.getInfoBank());
+            foundClaim.setClaimAmounts(claim.getClaimAmounts());
+            System.out.println("After update:" + foundClaim);*/
+            listClaims.remove(foundClaim);
+            listClaims.add(claim);
+        } else {
+            System.out.println("None existed claim");
+            System.out.println("Adding a new claim");
+            this.add(claim);
+        }
+        System.out.println("Processing");
+        System.out.println("Done!!!");
     }
 
     @Override
-    public void delete(Claim c) {
-
+    public void delete(String claimID) {
+        Claim foundClaim = listClaims.stream().filter(aClaim -> aClaim.getId().equals(claimID)).findFirst().orElse(null);
+        if (foundClaim != null) {
+            listClaims.remove(foundClaim);
+        } else {
+            System.out.println("None existed claim");
+        }
+        System.out.println("Processing");
+        System.out.println("Done!!!");
     }
 
     @Override
-    public Claim getOne(String id) {
-        return null;
+    public Claim getOne(String claimID) {
+        return listClaims.stream().filter(aClaim -> aClaim.getId().equals(claimID)).findFirst().orElse(null);
     }
 
     @Override
-    public ArrayList<Claim> getAll() {
-        return null;
+    public List<Claim> getAll() {
+        return listClaims;
     }
 
     @Override

@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Claim/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Claim/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource/Dependents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Dependents.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" afterDir="false" />
+    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Building a user interface">
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711075446114</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Building a user interface">
+      <option name="closed" value="true" />
+      <created>1711508996593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711508996593</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bulding the simple base code for the Insurance System" />
     <MESSAGE value="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class" />
+    <MESSAGE value="Building a user interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Building a user interface" />
   </component>
 </project>

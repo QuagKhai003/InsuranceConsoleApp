@@ -19,7 +19,7 @@ public class InsuranceManager{
             displayMainMenu();
             status = false;
         }
-        System.out.println("Exit successfull");
+        System.out.println("Exit successfully");
     }
 
     public static void displayMainMenu() throws InterruptedException {

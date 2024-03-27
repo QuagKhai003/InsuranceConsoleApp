@@ -222,16 +222,19 @@ public class InsuranceManager{
         viewAllCustomer();
     }
 
+    //Auto Generating Customer ID Function
     public static String generateCustomerId(int number) {
         int loopAdd = 7 - Integer.toString(number).length();
         return "c-" + "0".repeat(Math.max(0, loopAdd)) + (number + 1);
     }
 
+    //Auto Generating Insurance Card ID Function
     public static String generateCardId(int number) {
         int loopAdd = 10 - Integer.toString(number).length();
         return "0".repeat(Math.max(0, loopAdd)) + (number + 1);
     }
 
+    //Auto Generating Claim ID Function
     public static String generateClaimId(int number) {
         int loopAdd = 10 - Integer.toString(number).length();
         return "f-" + "0".repeat(Math.max(0, loopAdd)) + (number + 1);

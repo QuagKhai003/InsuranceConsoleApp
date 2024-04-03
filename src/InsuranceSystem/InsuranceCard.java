@@ -42,6 +42,26 @@ public class InsuranceCard {
         this.cardHolder = cardHolder;
     }
 
+    public String getPolicyOwner() {
+        return policyOwner;
+    }
+
+    public void setPolicyOwner(String policyOwner) {
+        this.policyOwner = policyOwner;
+    }
+
+    public Date getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(String expireDate) throws ParseException {
+        try {
+            this.expireDate = (new SimpleDateFormat("dd/MM/yyyy").parse(expireDate));;
+        } catch ( ParseException e) {
+            System.out.println("Invalid Date Input");
+        }
+    }
+
     @Override
     public String toString() {
         /*if (this.cardHolder == null) {

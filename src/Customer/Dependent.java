@@ -21,7 +21,7 @@ public class Dependent extends Customer {
                 "id='" + super.getId() + '\'' +
                 ", fullName='" + super.getFullName() + '\'' +
                 ", insuranceCard=" + super.getInsuranceCard() + '\'' +
-                ", listClaims=" + "[" + super.listIdClaim() + "]" +
+                ", listClaims=" + "[" + super.getListClaims() + "]" +
                 '}';
     }
 }

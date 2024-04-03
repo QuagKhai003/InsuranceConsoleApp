@@ -42,7 +42,7 @@ public class LoadDataBase {
         }
 
         for(Customer c : policyHolderList) {
-            ((PolicyHolder) c).setListDependents(makeDependentList(c.getInsuranceCard()));
+            ((PolicyHolder) c).setListDependents(new ListDependentOfCustomer(makeDependentList(c.getInsuranceCard())));
         }
 
     }
@@ -75,7 +75,7 @@ public class LoadDataBase {
         }
 
         for (Customer p: customerList) {
-            p.setListClaims(makeClaimsList(p.getId()));
+            p.setListClaims(new ListClaimOfCustomer(makeClaimsList(p.getId())));
         }
     }
 
@@ -87,6 +87,10 @@ public class LoadDataBase {
     // Find a first PolicyHolder has the same ID with cID
     public static Customer findPolicyHolder(String cID) {
         return policyHolderList.stream().filter(customer -> customer.getId().equals(cID)).findFirst().orElse(null);
+    }
+
+    public static Customer findPolicyHolderByCardId(String cardID) {
+        return policyHolderList.stream().filter(holder -> holder.getInsuranceCard().equals(cardID)).findFirst().orElse(null);
     }
 
     // Create a list of dependent base on the same InsuranceCard and then set PolicyHolders' listDependents by those list

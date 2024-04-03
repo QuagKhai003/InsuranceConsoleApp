@@ -5,6 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Building a user interface">
+      <change afterPath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Claim/ListDocumentOfClaim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Dependent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Dependent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

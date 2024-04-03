@@ -137,7 +137,7 @@ public class Claim {
 
     @Override
     public int hashCode() {
-        return Integer.valueOf(this.getId().substring(2));
+        return Integer.parseInt(this.getId().substring(2));
     }
 
     @Override

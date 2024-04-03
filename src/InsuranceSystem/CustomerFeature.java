@@ -1,89 +1,32 @@
 package InsuranceSystem;
 
-import Claim.Claim;
 import Customer.*;
-import DataSource.*;
+import DataSource.LoadDataBase;
 
-import java.awt.*;
-import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
+public class CustomerFeature {
+    private static int cusAmount = Integer.parseInt(LoadDataBase.customerList.get(LoadDataBase.customerList.size()-1).getId().substring(2));
 
-public class InsuranceManager{
-    private static boolean status;
-    public static Scanner scanner = new Scanner(System.in);
-    public InsuranceManager(boolean active) throws Exception {
-        status = active;
-        LoadDataBase.createAll();
-        while (status) {
-            displayMainMenu();
-            status = false;
-        }
-        System.out.println("Exit successfully");
-    }
-
-    public static void displayMainMenu() throws Exception {
-        System.out.println("-------------------MAIN  MENU---------------------");
-        System.out.println("1. View all customers ");
-        System.out.println("2. View all policy holders");
-        System.out.println("3. View all dependents");
-        System.out.println("4. View all insurance card");
-        System.out.println("5. View all claim");
-        System.out.println("6. View all document");
-        System.out.println("7. Exit the system");
-        System.out.println("Please choose action : ");
-        if (scanner.hasNextInt()) {
-            int action = scanner.nextInt();
-            switch (action) {
-                case 1:
-                    CustomerFeature.displayAllCustomer();
-                    CustomerFeature.operationAllCustomer();
-                    break;
-                case 2:
-                    CustomerFeature.displayAllPolicyHolder();
-                    CustomerFeature.operationAllCustomer();
-                    break;
-                case 3:
-                    CustomerFeature.displayAllDependent();
-                    CustomerFeature.operationAllCustomer();
-                    break;
-                case 4:
-                    CardFeature.displayAllInsuranceCard();
-                    CardFeature.operationCard();
-                    break;
-                case 5:
-                    ClaimFeature.displayAllClaim();
-                    ClaimFeature.operationClaim();
-                    break;
-                case 6:
-                    ClaimFeature.displayAllDocument();
-                    ClaimFeature.operationClaim();
-                case 7:
-                    status = false;
-                    break;
-                default:
-                    System.out.println();
-                    System.out.println("Wrong number please enter again!");
-                    System.out.println();
-                    break;
-            }
-        } else {
-            String invalidInput = scanner.nextLine();
-            System.out.println();
-            System.out.println("Invalid input: " + invalidInput);
-            System.out.println("Please enter a valid number.");
-            System.out.println();
-        }
-    }
-
-    /*public static void displayAllCustomer() {
+    public static void displayAllCustomer() {
         for (Customer c: LoadDataBase.customerList) {
             System.out.println(c);
         }
     }
-    public static void operationAllCustomer () throws InterruptedException {
+
+    public static void displayAllPolicyHolder() {
+        for (Customer c: LoadDataBase.policyHolderList) {
+            System.out.println(c);
+        }
+    }
+    public static void displayAllDependent() {
+        for (Customer c: LoadDataBase.dependentList) {
+            System.out.println(c);
+        }
+    }
+
+    public static void operationAllCustomer () throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------All Customers---------------------");
         System.out.println("1. Create a customer ");
@@ -99,25 +42,30 @@ public class InsuranceManager{
             switch (action) {
                 case 1:
                     addCustomer();
+                    operationAllCustomer();
                     break;
                 case 2:
                     updateCustomer();
+                    operationAllCustomer();
                     break;
                 case 3:
                     deleteCustomer();
+                    operationAllCustomer();
                     break;
                 case 4:
                     viewDependentsOfPolicyHolder();
+                    operationAllCustomer();
                     break;
                 case 5:
                     viewPolicyHolderOfDependent();
+                    operationAllCustomer();
                     break;
                 case 6:
                     displayAllCustomer();
                     operationAllCustomer();
                     break;
                 case 7:
-                    displayMainMenu();
+                    InsuranceManager.displayMainMenu();
                     break;
                 default:
                     System.out.println();
@@ -153,22 +101,29 @@ public class InsuranceManager{
         if (answer.equalsIgnoreCase("y")) {
             System.out.println("Processing...");
             if ( role == 1 ) {
-                try {
-                    Customer c = new PolicyHolder(generateCustomerId(),fullName, insuranceCardId);
-                    LoadDataBase.customerList.add(c);
-                } catch (Exception e) {
-                    System.out.println("Error while creating new policy holder");
-                    throw e;
+                if (LoadDataBase.findCard(insuranceCardId) == null) {
+                    try {
+                        Customer c = new PolicyHolder(generateCustomerId(),fullName, insuranceCardId);
+                        LoadDataBase.customerList.add(c);
+                        LoadDataBase.policyHolderList.add(c);
+                    } catch (Exception e) {
+                        System.out.println("Error while creating new policy holder");
+                        throw e;
+                    }
+                    Thread.sleep(1000);
+                    System.out.println("Done creating!!!");
+                } else {
+                    System.out.println("This card already have another policy holder");
                 }
                 Thread.sleep(1000);
-                System.out.println("Done creating!!!");
             }
             if ( role == 2) {
                 try {
-                    if ( LoadDataBase.findCard(insuranceCardId) != null ) {
+                    if ( LoadDataBase.findPolicyHolderByCardId(insuranceCardId) != null ) {
                         Customer c = new Dependent(generateCustomerId(),fullName, insuranceCardId);
                         LoadDataBase.customerList.add(c);
-                        ((PolicyHolder) LoadDataBase.findCard(insuranceCardId).getCardHolder()).getListDependents().add(c);
+                        LoadDataBase.dependentList.add(c);
+                        ((PolicyHolder) LoadDataBase.findPolicyHolderByCardId(insuranceCardId)).getListDependents().add(c);
                     } else {
                         System.out.println("Cannot create a dependent without non-existed policy holder of the given insurance card id");
                         System.out.println("Please create a policy holder with this insurance card id first");
@@ -188,7 +143,6 @@ public class InsuranceManager{
         }
         Thread.sleep(1000);
         displayAllCustomer();
-        operationAllCustomer();
     }
 
     public static void updateCustomer() throws InterruptedException {
@@ -220,19 +174,15 @@ public class InsuranceManager{
                     foundC.setFullName(fullName);
                     //check if the found customer is a policyholder or a dependent
                     if (foundC instanceof Dependent) {
-                        foundC.setInsuranceCard(insuranceCardId);
-                        if ( LoadDataBase.findCard(insuranceCardId) != null ) {
-                            ((PolicyHolder) LoadDataBase.findCard(insuranceCardId).getCardHolder()).getListDependents().add(foundC);
-                            ((PolicyHolder) LoadDataBase.findCard(oldInsuranceCardId).getCardHolder()).getListDependents().delete(foundC.getId());
+                        if ( LoadDataBase.findPolicyHolderByCardId(insuranceCardId) != null ) {
+                            foundC.setInsuranceCard(insuranceCardId);
+                            ((PolicyHolder) LoadDataBase.findPolicyHolderByCardId(insuranceCardId)).getListDependents().add(foundC);
+                            ((PolicyHolder) LoadDataBase.findPolicyHolderByCardId(oldInsuranceCardId)).getListDependents().delete(foundC.getId());
                         }
                     }
                     if (foundC instanceof PolicyHolder) {
-                        if ( LoadDataBase.findCard(insuranceCardId) != null ) {
-                            if ( LoadDataBase.findCard(insuranceCardId).getCardHolder().equals(foundC) ) {
-                                foundC.setInsuranceCard(insuranceCardId);
-                            } else {
-                                System.out.println("This card already have a policyholder");
-                            }
+                        if ( LoadDataBase.findPolicyHolderByCardId(insuranceCardId) != null ) {
+                            System.out.println("This card already have a policyholder");
                         } else {
                             foundC.setInsuranceCard(insuranceCardId);
                         }
@@ -250,7 +200,6 @@ public class InsuranceManager{
         }
         Thread.sleep(1000);
         displayAllCustomer();
-        operationAllCustomer();
     }
 
     public static void deleteCustomer() throws InterruptedException {
@@ -268,7 +217,14 @@ public class InsuranceManager{
         if (answer.equalsIgnoreCase("y")) {
             System.out.println("Processing...");
             try {
-                ((PolicyHolder) LoadDataBase.findCard(foundC.getInsuranceCard()).getCardHolder()).getListDependents().delete(foundC.getId());
+                if ( foundC instanceof Dependent ) {
+                    if (LoadDataBase.findPolicyHolderByCardId(foundC.getInsuranceCard()) != null) {
+                        ((PolicyHolder) LoadDataBase.findPolicyHolderByCardId(foundC.getInsuranceCard())).getListDependents().delete(foundC.getId());
+                    }
+                    LoadDataBase.dependentList.remove(foundC);
+                } else {
+                    LoadDataBase.policyHolderList.remove(foundC);
+                }
                 LoadDataBase.customerList.remove(foundC);
             } catch (Exception e) {
                 System.out.println("Error while deleting a customer");
@@ -280,8 +236,8 @@ public class InsuranceManager{
             System.out.println("Exit deleting process...");
         }
         Thread.sleep(1000);
+        System.out.println();
         displayAllCustomer();
-        operationAllCustomer();
     }
 
     public static void viewDependentsOfPolicyHolder() throws InterruptedException {
@@ -302,7 +258,6 @@ public class InsuranceManager{
             System.out.println(dep);
         }
         System.out.println();
-        operationAllCustomer();
     }
     public static void viewPolicyHolderOfDependent() throws InterruptedException {
         int index = 0;
@@ -320,7 +275,6 @@ public class InsuranceManager{
         System.out.println("The policy holder of the chosen dependent:");
         System.out.println(LoadDataBase.findCard(desiredDependent.getInsuranceCard()).getCardHolder());
         System.out.println();
-        operationAllCustomer();
     }
 
     //Auto Generating Customer ID Function
@@ -328,43 +282,5 @@ public class InsuranceManager{
         cusAmount = cusAmount + 1;
         int loopAdd = 7 - Integer.toString(cusAmount).length();
         return "c-" + "0".repeat(Math.max(0, loopAdd)) + (cusAmount);
-    }*/
-
-
-    /*public static void main(String[] args) throws FileNotFoundException, ParseException {
-        LoadDataBase.createAll();
-        LoadDataBase.createCustomers();
-        LoadDataBase.createCards();
-        LoadDataBase.createDocuments();
-        LoadDataBase.createClaims();
-
-        Customer cus = LoadDataBase.customerList.stream().filter(aCus -> aCus.getId().equals("c-0000036")).findFirst().orElse(null);
-        Customer cus2 = new Dependent("c-0002","sdasdada","dsadadadsd");
-        InsuranceCard card2222 = LoadDataBase.cardList.stream().filter(aC -> aC.getCardId().equals("0000000012")).findFirst().orElse(null);
-        Claim cl = new Claim("f-0000000013","01/01/2000",cus,"0000000012","01/01/2000","300$","Bank F - hsl111 - 59985");
-
-        System.out.println(cus);
-        System.out.println(cus2);
-        cus.add(cl);
-        cus2.add(cl);
-        System.out.println(cus);
-        System.out.println(cus2);
-        LoadDataBase.claimList.add(cl);
-        LoadDataBase.dependentList.add(cus2);
-        LoadDataBase.customerList.add(cus2);
-
-        System.out.println("======Customer List======");
-        for(Customer c: LoadDataBase.customerList) {
-            System.out.println(c);
-        }
-
-        System.out.println("======Insurance Card List======");
-        for(InsuranceCard c: LoadDataBase.cardList) {
-            System.out.println(c);
-        }
-        System.out.println("======Claim List======");
-        for(Claim c: LoadDataBase.claimList) {
-            System.out.println(c);
-        }
-    }*/
+    }
 }

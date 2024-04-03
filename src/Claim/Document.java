@@ -28,6 +28,24 @@ public class Document {
     }
 
     @Override
+    public int hashCode() {
+        return Integer.parseInt(this.toString());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj  instanceof Document)) {
+            return false;
+        }
+
+        Document otherDoc = (Document) obj;
+        return this.toString().equals(otherDoc.toString());
+    }
+
+    @Override
     public String toString() {
         return claimId + "_" + cardNumber + "_" + documentName;
     }

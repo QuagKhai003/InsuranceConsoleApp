@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PolicyHolder extends Customer {
-    private List<Customer> listDependents;
+    private ListDependentOfCustomer listDependents;
 
     public PolicyHolder() {
         super();
@@ -15,10 +15,18 @@ public class PolicyHolder extends Customer {
 
     public PolicyHolder(String id, String fullName, String insuranceCardId) {
         super(id, fullName, insuranceCardId);
-        this.listDependents = new ArrayList<>();
+        this.listDependents = new ListDependentOfCustomer();
     }
 
-    public List<Customer> getListDependents() {
+    public ListDependentOfCustomer getListDependents() {
+        return listDependents;
+    }
+
+    public void setListDependents(ListDependentOfCustomer listDependents) {
+        this.listDependents = listDependents;
+    }
+
+    /*public List<Customer> getListDependents() {
         return listDependents;
     }
 
@@ -36,7 +44,7 @@ public class PolicyHolder extends Customer {
 
     public String listNameDep() {
         return this.listDependents.stream().map(Customer::getFullName).collect(Collectors.joining(","));
-    }
+    }*/
 
     @Override
     public boolean isPolicyHolder() {
@@ -49,8 +57,8 @@ public class PolicyHolder extends Customer {
                 "id='" + super.getId() + '\'' +
                 ", fullName='" + super.getFullName() + '\'' +
                 ", insuranceCard='" + super.getInsuranceCard() + '\'' +
-                ", listClaims=" + "[" + super.listIdClaim() + "]" +
-                ", listDependents=" + "[" + listNameDep() + "]" +
+                ", listClaims=" + "[" + super.getListClaims() + "]" +
+                ", listDependents=" + "[" + listDependents + "]" +
                 '}';
     }
 }

@@ -48,20 +48,21 @@ public class ListClaimOfCustomer implements ClaimProcessManager {
     }
 
     @Override
-    public void delete(String claimId) {
-        Claim foundClaim = listClaim.stream().filter(aClaim -> aClaim.getId().equals(claimId)).findFirst().orElse(null);
-        System.out.println(foundClaim);
-        if (foundClaim != null) {
-            this.listClaim.remove(foundClaim);
+    public void delete(Claim claim) {
+        if (this.listClaim.contains(claim)) {
+            this.listClaim.remove(claim);
         } else {
             System.out.println("None existed claim");
-            System.out.println("Adding a new claim");
         }
     }
 
     @Override
-    public Claim getOne(String claimId) {
-        return listClaim.stream().filter(aClaim -> aClaim.getId().equals(claimId)).findFirst().orElse(null);
+    public Claim getOne(int index) {
+        try {
+            return listClaim.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
     }
 
     @Override

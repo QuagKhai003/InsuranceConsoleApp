@@ -19,10 +19,10 @@ public class Claim {
 //    private String status;
     private String infoBank;
 
-    enum Status {
-        New,
-        Processing,
-        Done
+    public enum Status {
+        NEW,
+        PROCESSING,
+        DONE
     }
 
     private Status status;
@@ -36,7 +36,7 @@ public class Claim {
         this.documents = null;
         this.claimAmounts = "Default";
         this.infoBank = "Default";
-        this.status = Status.New;
+        this.status = Status.NEW;
     }
 
     public Claim(String id, String claimDate, Customer insuredPerson, String cardNumber, String examDate, List<Document> documents, String claimAmounts, String statusString, String infoBank) throws ParseException {
@@ -47,7 +47,7 @@ public class Claim {
         this.examDate = new SimpleDateFormat("dd/MM/yyyy").parse(examDate);
         this.documents = documents;
         this.claimAmounts = claimAmounts;
-        this.status = Status.valueOf(statusString);
+        this.status = Status.valueOf(statusString.toUpperCase());
         this.infoBank = infoBank;
     }
 
@@ -59,7 +59,7 @@ public class Claim {
         this.examDate = new SimpleDateFormat("dd/MM/yyyy").parse(examDate);
         this.documents = new ArrayList<>();
         this.claimAmounts = claimAmounts;
-        this.status = Status.New;
+        this.status = Status.NEW;
         this.infoBank = infoBank;
     }
 

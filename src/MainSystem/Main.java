@@ -1,8 +1,5 @@
-package Menu;
+package MainSystem;
 
-import Claim.*;
-import Customer.*;
-import DataSource.*;
 import InsuranceSystem.*;
 
 import java.util.Scanner;

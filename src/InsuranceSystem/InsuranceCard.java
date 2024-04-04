@@ -26,6 +26,13 @@ public class InsuranceCard {
         this.expireDate = (new SimpleDateFormat("dd/MM/yyyy").parse(expireDate));
     }
 
+    public InsuranceCard(String cardId, Customer cardHolder) throws ParseException {
+        this.cardId = cardId;
+        this.cardHolder = cardHolder;
+        this.policyOwner = "Default";
+        this.expireDate = new Date();
+    }
+
     public String getCardId() {
         return cardId;
     }
@@ -64,28 +71,6 @@ public class InsuranceCard {
 
     @Override
     public String toString() {
-        /*if (this.cardHolder == null) {
-            return "InsuranceCard{" +
-                    "cardId='" + cardId + '\'' +
-                    ", cardHolder=None" +
-                    ", policyOwner=" + policyOwner.getFullName()+
-                    ", expireDate=" + expireDate +
-                    '}';
-        } else if (this.policyOwner == null) {
-            return "InsuranceCard{" +
-                    "cardId='" + cardId + '\'' +
-                    ", cardHolder=" + cardHolder.getFullName() +
-                    ", policyOwner=None" +
-                    ", expireDate=" + expireDate +
-                    '}';
-        } else if (this.cardHolder == null && this.policyOwner == null) {
-            return "InsuranceCard{" +
-                    "cardId='" + cardId + '\'' +
-                    ", cardHolder=None" +
-                    ", policyOwner=None" +
-                    ", expireDate=" + expireDate +
-                    '}';
-        } else {*/
             return "InsuranceCard{" +
                     "cardId='" + cardId + '\'' +
                     ", cardHolder=" + cardHolder.getFullName() +

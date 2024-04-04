@@ -62,24 +62,25 @@ public class ListDependentOfCustomer implements UpdatingProcessManager {
     }
 
     @Override
-    public void delete(String id) {
-        Customer foundDep = listDependents.stream().filter(aDep -> aDep.getId().equals(id)).findFirst().orElse(null);
-        System.out.println(foundDep);
-        if (foundDep != null) {
-            this.listDependents.remove(foundDep);
+    public void delete(Customer o) {
+        if (this.listDependents.contains(o)) {
+            this.listDependents.remove(o);
         } else {
-            System.out.println("None existed claim");
-            System.out.println("Adding a new claim");
+            System.out.println("None existed dependent");
         }
     }
 
     @Override
-    public Customer getOne(String id) {
-        return listDependents.stream().filter(aDep -> aDep.getId().equals(id)).findFirst().orElse(null);
+    public Customer getOne(int index) {
+        try {
+            return listDependents.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
     }
 
     @Override
     public List<Customer> getAll() {
-        return listDependents;
+        return this.listDependents;
     }
 }

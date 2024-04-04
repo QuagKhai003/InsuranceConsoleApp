@@ -4,23 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Building a user interface">
-      <change afterPath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Claim/ListDocumentOfClaim.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" afterDir="false" />
+    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Building a version 2 of insurance console app">
+      <change afterPath="$PROJECT_DIR$/src/DataSource/SaveDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Claim/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Claim/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer/Dependent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Dependent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/Claims.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Claims.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/Dependents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Dependents.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/Documents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/Documents.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/InsuranceCards.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/PolicyHolders.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainSystem/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +53,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;H:/Code/Java/InsuranceConsoleApp&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -74,11 +78,24 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Menu.Main" />
+      <option name="MAIN_CLASS_NAME" value="MainSystem.Main" />
       <module name="InsuranceConsoleApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Menu.*" />
+          <option name="PATTERN" value="MainSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaveDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataSource.SaveDatabase" />
+      <module name="InsuranceConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataSource.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,6 +113,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SaveDatabase" />
         <item itemvalue="Application.InsuranceManager" />
         <item itemvalue="Application.System" />
       </list>
@@ -134,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711508996593</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Building a version 2 of insurance console app">
+      <option name="closed" value="true" />
+      <created>1712116166395</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712116166395</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +190,7 @@
     <MESSAGE value="Bulding the simple base code for the Insurance System" />
     <MESSAGE value="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class" />
     <MESSAGE value="Building a user interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Building a user interface" />
+    <MESSAGE value="Building a version 2 of insurance console app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Building a version 2 of insurance console app" />
   </component>
 </project>

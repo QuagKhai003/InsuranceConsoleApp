@@ -11,9 +11,9 @@ public interface UpdatingProcessManager {
 
     public void update(Customer o);
 
-    public void delete(String id);
+    public void delete(Customer o);
 
-    public Customer getOne(String id);
+    public Customer getOne(int id);
 
     public List<Customer> getAll();
 }

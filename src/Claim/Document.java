@@ -19,6 +19,14 @@ public class Document {
         this.claimId = claimId;
     }
 
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
     public String getDocumentName() {
         return documentName;
     }

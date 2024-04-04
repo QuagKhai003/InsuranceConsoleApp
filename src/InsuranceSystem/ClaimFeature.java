@@ -35,6 +35,7 @@ public class ClaimFeature {
             System.out.println(d);
         }
     }
+
     public static void operationClaim() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------Claim Menu---------------------");
@@ -68,7 +69,7 @@ public class ClaimFeature {
                     operationClaim();
                     break;
                 case 5:
-                    InsuranceManager.displayMainMenu();
+                    break;
                 default:
                     System.out.println();
                     System.out.println("Wrong number please enter again!");
@@ -100,9 +101,9 @@ public class ClaimFeature {
         System.out.println("-------------------Make a Claim---------------------");
         System.out.println("Enter the id of insured people: ");
         String insuredPerson =  scanner.nextLine();
-        System.out.println("Enter the claim date: ");
+        System.out.println("Enter the claim date (DD/MM/YYYY): ");
         String claimDate = scanner.nextLine();
-        System.out.println("Enter the exam date: ");
+        System.out.println("Enter the exam date (DD/MM/YYYY): ");
         String examDate = scanner.nextLine();
         System.out.println("Enter the claim amount: ");
         String claimAmount = scanner.nextLine();
@@ -151,8 +152,10 @@ public class ClaimFeature {
             System.out.println("4. Claim amount");
             System.out.println("5. Documents");
             System.out.println("6. Bank info");
-            System.out.println("7. Choose another claim");
-            System.out.println("8. Exit update claim process");
+            System.out.println("7. Status");
+            System.out.println("8. Choose another claim");
+            System.out.println("9. Exit update claim process");
+            System.out.println("10. Go to Main Menu");
             System.out.println("Enter the category you want to update: ");
             if (scanner.hasNextInt()) {
                 int action = scanner.nextInt();
@@ -182,12 +185,18 @@ public class ClaimFeature {
                         updateClaim(foundClaim);
                         break;
                     case 7:
+                        updateClaimStatus(foundClaim);
+                        updateClaim(foundClaim);
+                        break;
+                    case 8:
                         displayAllClaim();
                         Claim claim = chooseClaim();
                         updateClaim(claim);
                         break;
-                    case 8:
-                        operationClaim();
+                    case 9:
+                        break;
+                    case 10:
+                        InsuranceManager.displayMainMenu();
                         break;
                     default:
                         System.out.println();
@@ -224,7 +233,11 @@ public class ClaimFeature {
             String answer2 = scanner.nextLine();
             if(answer2.equalsIgnoreCase("y")) {
                 try {
+                    foundClaim.getInsuredPerson().getListClaims().delete(foundClaim);
                     LoadDataBase.claimList.remove(foundClaim);
+                    for ( Document d: foundClaim.getDocuments()) {
+                        LoadDataBase.documentList.remove(d);
+                    }
                     System.out.println("Delete a claim successfully");
                     System.out.println("Exiting deleting process...");
                 } catch (Exception e) {
@@ -241,15 +254,22 @@ public class ClaimFeature {
         CustomerFeature.displayAllCustomer();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the id of new insured people: ");
-        String oldInsuredPeople = scanner.nextLine();
-        Customer foundCus = LoadDataBase.findCustomer(oldInsuredPeople);
+        String newInsuredPeople = scanner.nextLine();
+        Customer foundCus = LoadDataBase.findCustomer(newInsuredPeople);
+        Customer oldCustomer = claim.getInsuredPerson();
         if(foundCus == null) {
             System.out.println("This customer did not exist");
         } else {
             System.out.println("Your customer from the input: " + foundCus);
-            scanner.nextLine();
+            oldCustomer.getListClaims().delete(claim);
+            List<Document> documentNeedDelete = new ArrayList<>(claim.getDocuments());
+            for (Document d: documentNeedDelete) {
+                claim.getDocuments().remove(d);
+                LoadDataBase.documentList.remove(d);
+            }
             claim.setInsuredPerson(foundCus);
             claim.setCardNumber(foundCus.getInsuranceCard());
+            foundCus.getListClaims().add(claim);
             System.out.println("Update new insured people successfully");
             System.out.println("Going back to update option menu...");
             Thread.sleep(1000);
@@ -320,6 +340,40 @@ public class ClaimFeature {
         Thread.sleep(1000);
     }
 
+    public static void updateClaimStatus(Claim claim) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose a new status for this claim: ");
+        System.out.println("1. NEW");
+        System.out.println("2. PROCESSING");
+        System.out.println("3. DONE");
+        try {
+            if(scanner.hasNext()) {
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        claim.setStatus(Claim.Status.NEW);
+                        break;
+                    case 2:
+                        claim.setStatus(Claim.Status.PROCESSING);
+                        break;
+                    case 3:
+                        claim.setStatus(Claim.Status.DONE);
+                        break;
+                    default:
+                        System.out.println();
+                        System.out.println("Wrong number please enter again!");
+                        System.out.println();
+                        updateClaimStatus(claim);
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Can not set new status for claim");
+            throw new Exception(e);
+        }
+        Thread.sleep(1000);
+    }
+
     public static void updateDocumentMenu(Claim claim) throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------Update Document Menu---------------------");
@@ -349,7 +403,6 @@ public class ClaimFeature {
                     updateDocumentMenu(claim);
                     break;
                 case 5:
-                    updateClaim(claim);
                     break;
                 default:
                     System.out.println();

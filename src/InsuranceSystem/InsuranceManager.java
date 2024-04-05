@@ -61,7 +61,6 @@ public class InsuranceManager{
                     break;
                 case 6:
                     ClaimFeature.displayAllDocument();
-                    CustomerFeature.operationAllCustomer();
                     displayMainMenu();
                 case 7:
                     saveDataBase();

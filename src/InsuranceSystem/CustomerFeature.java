@@ -88,9 +88,9 @@ public class CustomerFeature {
         System.out.println("2. Update a customer");
         System.out.println("3. Delete a customer");
         System.out.println("4. View dependents of a policy holder");
-        System.out.println("5. View policy holder of a dependent");
+        System.out.println("5. Find policy holder of a dependent");
         System.out.println("6. View claim of a customer");
-        System.out.println("7. Get all customer");
+        System.out.println("7. View all customer");
         System.out.println("8. Go Back");
         System.out.println("Please choose action : ");
         if (scanner.hasNextInt()) {
@@ -487,11 +487,7 @@ public class CustomerFeature {
     }
 
     public static void viewDependentsOfPolicyHolder() throws InterruptedException {
-        int index = 0;
-        for (Customer c : LoadDataBase.policyHolderList) {
-            System.out.println(index + ". " + c);
-            index = index + 1;
-        }
+        displayAllPolicyHolder();
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Choose your an index of a policy holder you want to see the dependents");
@@ -507,11 +503,7 @@ public class CustomerFeature {
     }
 
     public static void viewPolicyHolderOfDependent() throws InterruptedException {
-        int index = 0;
-        for (Customer c : LoadDataBase.dependentList) {
-            System.out.println(index + ". " + c);
-            index = index + 1;
-        }
+        displayAllDependent();
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Choose your an index of a dependent you want to see the policy holder");

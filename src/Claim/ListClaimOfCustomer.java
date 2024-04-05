@@ -13,8 +13,8 @@ public class ListClaimOfCustomer implements ClaimProcessManager {
         this.listClaim = new ArrayList<Claim>();
     }
 
-    public ListClaimOfCustomer(List<Claim> claimListFromDatabase) {
-        this.listClaim = claimListFromDatabase;
+    public ListClaimOfCustomer(List<Claim> listClaim) {
+        this.listClaim = listClaim;
     }
 
     public List<Claim> getListClaim() {

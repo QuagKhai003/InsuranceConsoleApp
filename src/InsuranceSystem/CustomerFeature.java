@@ -192,8 +192,7 @@ public class CustomerFeature {
                     } else {
                         System.out.println("Cannot create a dependent without non-existed policy holder of the given insurance card id");
                         System.out.println("Please create a policy holder with empty insurance card id first");
-                        System.out.println("Then update insurance card of this policy holder");
-                        System.out.println("It will automatically create a new card if your desired card is still invalid");
+                        System.out.println("Then create insurance card of this policy holder");
                     }
                 } catch (Exception e) {
                     System.out.println("Error while creating new dependent");

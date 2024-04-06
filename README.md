@@ -3,7 +3,7 @@
 
 <h2>About</h2>
 
-- This application is create to stimulate the insurance system
+- This application is create to stimulate the insurance system using Java version 20
 
 - This project contain one folder of application, 1 report and two images
 

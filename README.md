@@ -24,7 +24,7 @@
 4. You are good to goes
 
 
-***Note:
+<h4>***Note:</h4>
 
 - When the system ask for the index, enter the number only
 

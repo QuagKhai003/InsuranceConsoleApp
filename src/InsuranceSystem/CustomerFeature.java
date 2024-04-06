@@ -159,34 +159,27 @@ public class CustomerFeature {
         scanner.nextLine();
         System.out.println("Enter customer's full name: ");
         String fullName = scanner.nextLine();
-        System.out.println("Enter insurance card's id: ");
-        String insuranceCardId = scanner.nextLine();
         System.out.println("Do you want to create this customer(Y/N):");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("y")) {
             System.out.println("Processing...");
             if ( role == 1 ) {
-                if (LoadDataBase.findCard(insuranceCardId) == null) {
-                    try {
-                        System.out.println("This card did not exist");
-                        System.out.println("Assign new customer to a empty card");
-                        Customer c = new PolicyHolder(generateCustomerId(),fullName, "null");
-                        LoadDataBase.customerList.add(c);
-                        LoadDataBase.policyHolderList.add(c);
-                        System.out.println("Please create insurance card of this policy holder afterward");
-                    } catch (Exception e) {
-                        System.out.println("Error while creating new policy holder");
-                        throw e;
-                    }
-                    Thread.sleep(1000);
-                    System.out.println("Done creating!!!");
-                } else {
-                    System.out.println("This card already have another policy holder");
-                    System.out.println("Exit without creating");
+                try {
+                    System.out.println("Assign new policy holder to a empty card");
+                    Customer c = new PolicyHolder(generateCustomerId(),fullName, "null");
+                    LoadDataBase.customerList.add(c);
+                    LoadDataBase.policyHolderList.add(c);
+                    System.out.println("Please create insurance card of this policy holder afterward");
+                } catch (Exception e) {
+                    System.out.println("Error while creating new policy holder");
+                    throw e;
                 }
+                System.out.println("Done creating!!!");
                 Thread.sleep(1000);
             }
             if ( role == 2) {
+                System.out.println("Enter insurance card's id for this dependent: ");
+                String insuranceCardId = scanner.nextLine();
                 try {
                     if ( LoadDataBase.findPolicyHolderByCardId(insuranceCardId) != null ) {
                         Customer c = new Dependent(generateCustomerId(),fullName, insuranceCardId);
@@ -195,8 +188,8 @@ public class CustomerFeature {
                         ((PolicyHolder) LoadDataBase.findPolicyHolderByCardId(insuranceCardId)).getListDependents().add(c);
                     } else {
                         System.out.println("Cannot create a dependent without non-existed policy holder of the given insurance card id");
-                        System.out.println("Please create a policy holder with empty insurance card id first");
-                        System.out.println("Then create insurance card of this policy holder");
+                        System.out.println("Please create a policy holder with null insurance card id first");
+                        System.out.println("Then create insurance card for that this policy holder");
                     }
                 } catch (Exception e) {
                     System.out.println("Error while creating new dependent");

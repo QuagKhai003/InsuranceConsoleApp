@@ -20,7 +20,6 @@ public class InsuranceManager{
         LoadDataBase.createAll();
         while (status) {
             displayMainMenu();
-            status = false;
         }
         System.out.println("Exit successfully");
     }
@@ -68,6 +67,7 @@ public class InsuranceManager{
                     displayMainMenu();
                 case 7:
                     saveDataBase();
+                    status = false;
                     break;
                 default:
                     System.out.println();

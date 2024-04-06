@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="" />
+    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Fixing the logic of addCustomer api">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2dqDtyAmO1J3yZSyshCPCpZTQTg" />
@@ -16,12 +30,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/Code/Java/InsuranceConsoleApp&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Code\Java\InsuranceConsoleApp\src\DataSource" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Customer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="InsuranceManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsuranceSystem.InsuranceManager" />
+      <module name="InsuranceConsoleApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainSystem.Main" />
+      <module name="InsuranceConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MainSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaveDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataSource.SaveDatabase" />
+      <module name="InsuranceConsoleApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataSource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="System" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="System" />
+      <module name="InsuranceConsoleApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SaveDatabase" />
+        <item itemvalue="Application.InsuranceManager" />
+        <item itemvalue="Application.System" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,6 +111,114 @@
       <option name="presentableId" value="Default" />
       <updated>1710726936683</updated>
     </task>
+    <task id="LOCAL-00001" summary="Bulding the simple base code for the Insurance System">
+      <option name="closed" value="true" />
+      <created>1710885243129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710885243129</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class">
+      <option name="closed" value="true" />
+      <created>1711075446114</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711075446114</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Building a user interface">
+      <option name="closed" value="true" />
+      <created>1711508996593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711508996593</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Building a version 2 of insurance console app">
+      <option name="closed" value="true" />
+      <created>1712116166395</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712116166395</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Building a version 2 of insurance console app&#10;Create Insurance Card Menu&#10;Create Claim Menu&#10;Create Customer Menu&#10;Create Save Database class to handle saving data">
+      <option name="closed" value="true" />
+      <created>1712264603511</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712264603511</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixing some syntax and variables' name">
+      <option name="closed" value="true" />
+      <created>1712333744423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712333744423</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Editing text in menu and some function in main menu">
+      <option name="closed" value="true" />
+      <created>1712355653699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712355653699</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add author for each files">
+      <option name="closed" value="true" />
+      <created>1712415004586</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712415004586</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixing the logic of addCustomer api">
+      <option name="closed" value="true" />
+      <created>1712429294677</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712429294677</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="version1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bulding the simple base code for the Insurance System" />
+    <MESSAGE value="Bulding a loding Claims system&#10;Add more data to each files&#10;Update class" />
+    <MESSAGE value="Building a user interface" />
+    <MESSAGE value="Building a version 2 of insurance console app" />
+    <MESSAGE value="Building a version 2 of insurance console app&#10;Create Insurance Card Menu&#10;Create Claim Menu&#10;Create Customer Menu&#10;Create Save Database class to handle saving data" />
+    <MESSAGE value="Fixing some syntax and variables' name" />
+    <MESSAGE value="Editing text in menu and some function in main menu" />
+    <MESSAGE value="Add author for each files" />
+    <MESSAGE value="Fixing the logic of addCustomer api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing the logic of addCustomer api" />
   </component>
 </project>

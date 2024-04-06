@@ -13,10 +13,10 @@
 
 - This project contain one folder of application, 1 report and two images
 
-- InsuranceConsoleAppActivityDiagram is an image of activity diagram. This would be used in case
+- InsuranceConsoleAppActivityDiagram.png is an image of activity diagram. This would be used in case
   the image of activity diagram in the report is not clear
 
-- InsuranceConsoleApp is an image of unified modeling language diagram. This would be used in case
+- InsuranceConsoleAppUMLDiagram.png is an image of unified modeling language diagram. This would be used in case
   the image of activity diagram in the report is not clear
 
 <h2>Instruction</h2>

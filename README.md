@@ -4,6 +4,12 @@
 <h2>About</h2>
 
 - This application is create to stimulate the insurance system using Java version 20
+  
+- This program run with: 
+  IntelliJ IDEA 2023.1.3 (Community Edition)
+  Build #IC-231.9161.38, built on June 20, 2023
+  Runtime version: 17.0.7+10-b829.16 amd64
+  Kotlin: 231-1.8.21-IJ9161.38
 
 - This project contain one folder of application, 1 report and two images
 

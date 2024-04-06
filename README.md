@@ -17,7 +17,7 @@
   the image of activity diagram in the report is not clear
 
 - InsuranceConsoleAppUMLDiagram.png is an image of unified modeling language diagram. This would be used in case
-  the image of activity diagram in the report is not clear
+  the image of UML diagram in the report is not clear
 
 <h2>Instruction</h2>
 

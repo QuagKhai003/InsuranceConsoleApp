@@ -1,5 +1,9 @@
 package Customer;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Claim.*;
 import Interface.ClaimProcessManager;
 
@@ -7,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author <Ngo Quang Khai - s3975831>
- */
 public abstract class Customer {
     private String id;
     private String fullName;

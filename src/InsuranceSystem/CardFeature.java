@@ -1,5 +1,9 @@
 package InsuranceSystem;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Claim.Claim;
 import Claim.ListClaimOfCustomer;
 import Customer.*;

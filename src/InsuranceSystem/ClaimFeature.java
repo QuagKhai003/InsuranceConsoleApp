@@ -1,5 +1,9 @@
 package InsuranceSystem;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Customer.Customer;
 import DataSource.*;
 import Claim.*;
@@ -100,7 +104,7 @@ public class ClaimFeature {
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------Make a Claim---------------------");
         System.out.println("Enter the id of insured people: ");
-        String insuredPerson =  scanner.nextLine();
+        String insuredPerson = scanner.nextLine();
         System.out.println("Enter the claim date (DD/MM/YYYY): ");
         String claimDate = scanner.nextLine();
         System.out.println("Enter the exam date (DD/MM/YYYY): ");

@@ -1,5 +1,9 @@
 package Customer;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import InsuranceSystem.InsuranceCard;
 
 public class Dependent extends Customer {

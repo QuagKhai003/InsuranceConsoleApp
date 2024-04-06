@@ -1,5 +1,9 @@
 package Interface;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Claim.Claim;
 import java.util.List;
 

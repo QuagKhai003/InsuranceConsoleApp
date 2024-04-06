@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Fixing some syntax and variables' name">
+    <list default="true" id="334416d7-d9b1-4100-8098-afc33db7a0e4" name="Changes" comment="Editing text in menu and some function in main menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Claim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/ListClaimOfCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Claim/ListDocumentOfClaim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Claim/ListDocumentOfClaim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Dependent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Dependent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/ListDependentOfCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/PolicyHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/LoadDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSource/SaveDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource/SaveDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/CardFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/ClaimFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/CustomerFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsuranceSystem/InsuranceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/ClaimProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/UpdatingProcessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainSystem/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712333744423</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Editing text in menu and some function in main menu">
+      <option name="closed" value="true" />
+      <created>1712355653699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712355653699</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +218,7 @@
     <MESSAGE value="Building a version 2 of insurance console app" />
     <MESSAGE value="Building a version 2 of insurance console app&#10;Create Insurance Card Menu&#10;Create Claim Menu&#10;Create Customer Menu&#10;Create Save Database class to handle saving data" />
     <MESSAGE value="Fixing some syntax and variables' name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing some syntax and variables' name" />
+    <MESSAGE value="Editing text in menu and some function in main menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editing text in menu and some function in main menu" />
   </component>
 </project>

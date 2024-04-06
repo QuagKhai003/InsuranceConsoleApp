@@ -1,5 +1,9 @@
 package Customer;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import InsuranceSystem.InsuranceCard;
 
 import java.util.ArrayList;

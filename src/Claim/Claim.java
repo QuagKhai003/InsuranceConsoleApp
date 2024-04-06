@@ -1,5 +1,9 @@
 package Claim;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Customer.*;
 
 import java.text.ParseException;
@@ -16,7 +20,6 @@ public class Claim {
     private Date examDate;
     private List<Document> documents;
     private String claimAmounts;
-//    private String status;
     private String infoBank;
 
     public enum Status {

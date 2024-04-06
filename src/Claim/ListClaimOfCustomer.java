@@ -1,5 +1,9 @@
 package Claim;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Interface.ClaimProcessManager;
 
 import java.util.ArrayList;

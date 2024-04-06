@@ -1,5 +1,9 @@
 package Claim;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 public class Document {
     private String claimId;
     private String cardNumber;

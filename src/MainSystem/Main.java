@@ -1,5 +1,9 @@
 package MainSystem;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import InsuranceSystem.*;
 
 import java.util.Scanner;

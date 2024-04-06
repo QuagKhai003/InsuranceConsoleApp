@@ -1,5 +1,9 @@
 package Customer;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Claim.Claim;
 import Interface.UpdatingProcessManager;
 

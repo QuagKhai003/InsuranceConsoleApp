@@ -1,5 +1,9 @@
 package InsuranceSystem;
 
+/**
+ * @author <Ngo Quang Khai - s3975831>
+ */
+
 import Customer.*;
 
 import java.text.ParseException;
